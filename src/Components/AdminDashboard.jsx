@@ -19,7 +19,8 @@ const AdminDashboard = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:8000/admin/analytics", {
+        const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+        const response = await axios.get(`${API_URL}/admin/analytics`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setAnalytics(response.data);

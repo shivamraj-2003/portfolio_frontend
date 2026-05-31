@@ -14,7 +14,8 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:8000/admin/login", {
+      const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+      const response = await axios.post(`${API_URL}/admin/login`, {
         email,
         password,
       });
