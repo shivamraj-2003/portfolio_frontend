@@ -102,6 +102,7 @@ const AdminDashboard = () => {
             <table className="w-full text-left border-collapse">
               <thead className="bg-gray-50">
                 <tr>
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase">Visitor Name</th>
                   <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase">Section</th>
                   <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase">Device</th>
                   <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase">IP Address</th>
@@ -111,6 +112,14 @@ const AdminDashboard = () => {
               <tbody className="divide-y divide-gray-200">
                 {analytics?.visits.map((visit) => (
                   <tr key={visit.id} className="hover:bg-gray-50 transition duration-150">
+                    <td className="px-6 py-4">
+                      <div className="flex items-center">
+                        <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold mr-3">
+                          {visit.visitor_name.charAt(0).toUpperCase()}
+                        </div>
+                        <span className="font-medium text-gray-900">{visit.visitor_name}</span>
+                      </div>
+                    </td>
                     <td className="px-6 py-4">
                       <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium">
                         {visit.section}

@@ -16,9 +16,12 @@ import Certificate from "./Components/Certificate";
 import AdminLogin from "./Components/AdminLogin";
 import AdminDashboard from "./Components/AdminDashboard";
 
+import VisitorPrompt from "./Components/VisitorPrompt";
+
 function Portfolio() {
   return (
     <div>
+      <VisitorPrompt />
       <Header />
       <Home />
       <About />
